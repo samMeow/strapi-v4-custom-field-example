@@ -3,6 +3,7 @@ import pluginPkg from '../../package.json';
 import pluginId from './pluginId';
 import Initializer from './components/Initializer';
 import PluginIcon from './components/PluginIcon';
+import HealthDetailInput from './components/HealthDetailInput';
 
 const name = pluginPkg.strapi.name;
 
@@ -28,6 +29,9 @@ export default {
         // },
       ],
     });
+
+    app.addFields({ type: 'heath-detail-input', Component: HealthDetailInput });
+
     app.registerPlugin({
       id: pluginId,
       initializer: Initializer,
