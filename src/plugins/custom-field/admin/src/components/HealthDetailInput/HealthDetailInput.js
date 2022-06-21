@@ -42,7 +42,7 @@ const HeathDetailInput = ({
         name="class"
         required={required}
         disabled={disabled}
-        value={parsedValue.type}
+        value={parsedValue.class}
         onChange={v => {
           onChange({
             target: { name, value: JSON.stringify({ class: v }), type: 'json' }
@@ -52,20 +52,20 @@ const HeathDetailInput = ({
         <Option value="fish">Fish</Option>
         <Option value="bird">Bird</Option>
       </Select>
-      {parsedValue.type === 'fish' && (
+      {parsedValue.class === 'fish' && (
         <TextInput
           label="Gill Status"
           name="fish.gill"
           onChange={e => handleChange(e.target.name, e.target.value)}
-          value={parsedValue.gill}
+          value={parsedValue.fish?.gill}
         />
       )}
-      {parsedValue.type === 'bird' && (
+      {parsedValue.class === 'bird' && (
         <TextInput
           label="Wing Status"
           name="bird.wing"
           onChange={e => handleChange(e.target.name, e.target.value)}
-          value={parsedValue.wing}
+          value={parsedValue.bird?.wing}
         />
       )}
 
